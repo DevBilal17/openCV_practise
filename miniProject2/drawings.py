@@ -9,7 +9,7 @@ if image is  None:
     print("Error: Image is not found!")
 else:
     image = cv2.resize(image,(300,300))
-    print("\n1.Line on Image")
+    print("\n1.Line on Image") #Line Module Working Correctly
     print("\n2.Circle on Image")
     print("\n3.Rectangle on Image")
     print("\n4.Text on Image")
