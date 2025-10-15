@@ -41,19 +41,35 @@ else:
         center = input("Enter Center Quardinates for Circle to appear in format (10,30) : ")
         radius = int(input("Enter radius e.g 50,100,... : "))
 
-        color = input("Enter color code in rgb format (12,345,234) : ")
+        center = center.split(",")
+        new_center = []
+        for i in center:
+            new_center.append(int(i))
+        new_center = tuple(new_center)
+        # color = input("Enter color code in rgb format (12,345,234) : ")
         thickness = int(input("Enter thickness e.g 1,2,3,... : "))
 
-        new_image = cv2.circle(image,center,radius,color,thickness)
+        new_image = cv2.circle(image,new_center,radius,(255,0,0),thickness)
     
     elif(choice == 3):
         pt1 = input("Enter Quardinates of Rectanlge top left point in format (10,30) : ")
         pt2 = input("Enter Quardinates of Rectangle bottom right point in format (10,30) : ")
+        pt1 = pt1.split(",")
+        pt2 = pt2.split(",")
+        new_pt1 = []
+        new_pt2 = []
+        for i in pt1:
+            new_pt1.append(int(i))
+        
+        for i in pt2:
+            new_pt2.append(int(i))
 
-        color = input("Enter color code in rgb format (12,345,234) : ")
+        new_pt1 = tuple(new_pt1)
+        new_pt2 = tuple(new_pt2)
+        # color = input("Enter color code in rgb format (12,345,234) : ")
         thickness = int(input("Enter thickness  e.g 1,2,3,... : "))
 
-        new_image = cv2.rectangle(image,pt1,pt2,color,thickness)
+        new_image = cv2.rectangle(image,new_pt1,new_pt2,(255,0,0),thickness)
     
     elif(choice == 4):
         text = input("Enter Text to write : ")
