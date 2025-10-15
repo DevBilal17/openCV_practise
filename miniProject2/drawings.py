@@ -10,8 +10,8 @@ if image is  None:
 else:
     image = cv2.resize(image,(300,300))
     print("\n1.Line on Image") #Line Module Working Correctly
-    print("\n2.Circle on Image")
-    print("\n3.Rectangle on Image")
+    print("\n2.Circle on Image") #Working
+    print("\n3.Rectangle on Image") #Working
     print("\n4.Text on Image")
     choice = int(input("\nWhat you want to perform? "))
     new_image = ''
@@ -75,10 +75,15 @@ else:
         text = input("Enter Text to write : ")
         org = input("Enter Quardinates for text to appear on image in format (10,30) : ")
 
-        color = input("Enter color code in rgb format (12,345,234) : ")
+        org = org.split(",")
+        new_org = []
+        for i in org:
+            new_org.append(int(i))
+        new_org = tuple(new_org)
+        # color = input("Enter color code in rgb format (12,345,234) : ")
         thickness = int(input("Enter thickness e.g 1,2,3,... : "))
         fontStyle = cv2.FONT_HERSHEY_SIMPLEX
-        lined_image = cv2.putText(image,text,org,fontStyle,1,color,thickness)
+        new_image = cv2.putText(image,text,new_org,fontStyle,1,(255,0,0),thickness)
 
     else:
         print("Write the correct choice")
