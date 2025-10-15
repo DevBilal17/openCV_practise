@@ -12,7 +12,7 @@ else:
     print("\n1.Line on Image") #Line Module Working Correctly
     print("\n2.Circle on Image") #Working
     print("\n3.Rectangle on Image") #Working
-    print("\n4.Text on Image")
+    print("\n4.Text on Image") #working
     choice = int(input("\nWhat you want to perform? "))
     new_image = ''
     if(choice == 1):
@@ -94,17 +94,13 @@ else:
         cv2.imshow("New Image",new_image)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
-    elif(int(y)==1):
+    elif(int(y)==2):
         # Extract the extension
         _, extension = os.path.splitext(input_image)
 
-        cv2.imwrite(f"download${extension}",new_image)
 
-# f = input("Enter num : ")
+        #Where image going ?
+        cv2.imwrite(f"download{extension}",new_image) # Now working
 
-# n = f.split(",")
-# f = []
-# for i in n:
-#    f.append(int(i))
-
-# print(tuple(f))
+    else:
+        print("Write Correct Choice")
