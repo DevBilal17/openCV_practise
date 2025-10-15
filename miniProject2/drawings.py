@@ -98,8 +98,6 @@ else:
         # Extract the extension
         _, extension = os.path.splitext(input_image)
 
-
-        #Where image going ?
         cv2.imwrite(f"download{extension}",new_image) # Now working
 
     else:
