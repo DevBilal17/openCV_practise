@@ -1,5 +1,7 @@
 
 import cv2
+from datetime import datetime
+
 
 camera = cv2.VideoCapture(0)
 
@@ -10,6 +12,7 @@ frame_height = int(camera.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 fourcc = cv2.VideoWriter_fourcc(*'MP4V')
 
+recording = cv2.VideoWriter(f"{datetime.now()}.mp4",fourcc,30,(frame_width,frame_height))
 
 while True:
     success,frames = camera.read()
@@ -18,6 +21,8 @@ while True:
         break
 
     if choice.lower() == 'r':
-        break
+        recording.write()
+    
+    
 
     
