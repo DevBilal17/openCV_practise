@@ -5,3 +5,11 @@ face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_fronta
 
 cap = cv2.VideoCapture(0)
 
+while True:
+    success , frame = cap.read()
+
+    if not success:
+        print("Image Not found")
+        break
+
+    
